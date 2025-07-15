@@ -299,4 +299,4 @@ with col2:
                 ])
 
                 # Display result
-                st.dataframe(styled_df, use_container_width=True)
+                st.write(styled_df.to_html(escape=False), unsafe_allow_html=True)
