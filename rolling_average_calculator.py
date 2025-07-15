@@ -278,5 +278,25 @@ with col2:
                     'entities': 'Entities_Count'
                 })
 
+                # Style the dataframe with bold headers and centered values
+                styled_df = max_bins_per_group.style.set_table_styles([
+                    {
+                        'selector': 'th',
+                        'props': [
+                            ('font-weight', 'bold'),
+                            ('text-align', 'center'),
+                            ('background-color', '#f0f2f6'),
+                            ('color', '#262730')
+                        ]
+                    },
+                    {
+                        'selector': 'td',
+                        'props': [
+                            ('text-align', 'center'),
+                            ('padding', '8px')
+                        ]
+                    }
+                ])
+
                 # Display result
-                st.dataframe(max_bins_per_group, use_container_width=True)
+                st.dataframe(styled_df, use_container_width=True)
